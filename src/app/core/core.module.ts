@@ -5,7 +5,7 @@ import { CommonModule }      from '@angular/common';
 import { FormsModule }   from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-import { AuthService, AppBarComponent, AuthComponent } from './';
+import { AuthService, AppBarComponent, AuthComponent, LayoutComponent } from './';
 
 import { ApiService } from './api.service';
 import { StoreService } from './store.service';
@@ -19,11 +19,13 @@ import { StoreHelperService } from './store-helper.service';
   ],
   declarations: [ 
     AppBarComponent,
-    AuthComponent
+    AuthComponent,
+    LayoutComponent
   ],
   exports:      [ 
     AppBarComponent,
-    AuthComponent
+    AuthComponent,
+    LayoutComponent
   ],
   providers:    [ 
 

@@ -5,8 +5,7 @@ import { ApiService } from '../core';
 @Component({
   selector: 'about-container',
   template: `     <div class="about-container">
-      <h1>about page</h1>
-      <md-icon>check</md-icon>
+      <h1>Retain, a Google Keep clone</h1>
     </div>
   `
 })

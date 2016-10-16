@@ -6,7 +6,6 @@ import { MaterialModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core';
 import { AppRoutingModule } from './app-routing.module';
-import { LayoutComponent } from './layout.component';
 
 import { NotesModule } from './notes';
 import { AboutModule } from './about/about.module';
@@ -21,8 +20,7 @@ import { AboutModule } from './about/about.module';
     AboutModule
   ],
   declarations: [
-    AppComponent,
-    LayoutComponent
+    AppComponent
   ],
   providers: [],
   bootstrap: [ AppComponent ]
