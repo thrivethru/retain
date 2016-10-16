@@ -1,0 +1,11 @@
+<div class="color-selector">
+  <md-icon class="icon" (click)="showSelector(true)">color_lens</md-icon>
+  <div class="selector row center-xs" *ngIf="isSelectorVisible">
+    <div
+      class="color"
+      *ngFor="let color of colors"
+      [ngStyle]="{'background-color': color}"
+      (click)="selectColor(color)"
+    ></div>
+  </div>
+</div>
