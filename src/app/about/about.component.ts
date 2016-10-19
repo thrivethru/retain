@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-import { ApiService } from '../core';
-
 @Component({
   selector: 'about-container',
   template: `     <div class="about-container">
@@ -9,6 +7,4 @@ import { ApiService } from '../core';
     </div>
   `
 })
-export class AboutComponent {
-  constructor(private apiService: ApiService) {}
-}
+export class AboutComponent {}
