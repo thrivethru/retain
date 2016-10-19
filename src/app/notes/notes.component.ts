@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { NoteService } from './shared';
+import { NoteService, Note } from './shared';
 import { StoreService } from '../core';
 import 'rxjs';
 
@@ -10,8 +10,8 @@ import 'rxjs';
   styleUrls: ['notes.component.css']
 })
 export class NotesComponent {
-  notes: Array<Object> = [];
-
+ // notes: Array<Object> = [];
+ notes: Array<Note> = [];
   constructor(private noteService: NoteService, private store: StoreService) {
     this.store.changes.pluck('notes')
       .subscribe((notes: any) => this.notes = notes)
