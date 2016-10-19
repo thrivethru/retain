@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@types/core-js": "^0.9.33",
+    "@types/jasmine": "^2.5.35",
     "@types/lodash": "^4.14.35",
     "@types/node": "^6.0.39",
     "angular2-template-loader": "^0.4.0",
