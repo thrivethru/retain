@@ -12,16 +12,16 @@ export class NoteService {
 
   createNote(note: {}) {
     return this.apiService.post(this.path, note)
-    .do(savedNote => this.storeHelper.add('notes', savedNote))
+    .do(savedNote => this.storeHelper.add('notes', savedNote));
   }
 
   getNotes() {
     return this.apiService.get(this.path)
-    .do(res => this.storeHelper.update('notes', res.data))
+    .do(res => this.storeHelper.update('notes', res.data));
   }
 
   completeNote(note: {id: number}) {
     return this.apiService.delete(`${this.path}/${note.id}`)
-    .do(res => this.storeHelper.findAndDelete('notes', res.id))
+    .do(res => this.storeHelper.findAndDelete('notes', res.id));
   }
 }

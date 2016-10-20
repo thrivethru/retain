@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AppBarComponent } from './';
 
 @Component({
   selector: 'layout-component',

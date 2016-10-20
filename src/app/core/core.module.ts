@@ -12,42 +12,42 @@ import { StoreService } from './store.service';
 import { StoreHelperService } from './store-helper.service';
 
 @NgModule({
-  imports:      [ 
+  imports:      [
     CommonModule,
-    FormsModule, 
+    FormsModule,
     RouterModule
   ],
-  declarations: [ 
+  declarations: [
     AppBarComponent,
     AuthComponent,
     LayoutComponent
   ],
-  exports:      [ 
+  exports:      [
     AppBarComponent,
     AuthComponent,
     LayoutComponent
   ],
-  providers:    [ 
+  providers:    [
 
   ]
 })
 export class CoreModule {
-  constructor (@Optional() @SkipSelf() parentModule: CoreModule) {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: CoreModule,
+      providers: [
+        AuthService,
+        StoreService,
+        StoreHelperService,
+        ApiService
+      ]
+    };
+  }
+
+  constructor( @Optional() @SkipSelf() parentModule: CoreModule) {
     if (parentModule) {
       throw new Error(
         'CoreModule is already loaded. Import it in the AppModule only');
     }
   }
-  static forRoot():ModuleWithProviders {
-        return {
-            ngModule: CoreModule,
-            providers: [
-              AuthService,
-              StoreService,
-              StoreHelperService,
-              ApiService
-            ]
-        };
-    }
-
 }

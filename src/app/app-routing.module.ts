@@ -8,10 +8,10 @@ import { AuthComponent, AuthService, LayoutComponent } from './core';
 export const routes: Routes = [
   {
     path: '',
-    canActivate: [AuthService], 
+    canActivate: [AuthService],
     component: LayoutComponent,
-    children: [ 
-      { 
+    children: [
+      {
         path: '',
         component: NotesComponent
       },

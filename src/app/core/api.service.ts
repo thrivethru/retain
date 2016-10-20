@@ -14,26 +14,11 @@ export class ApiService {
 
   constructor(private http: Http) { }
 
-  private getJson(response: Response) {
-    return response.json();
-  }
-
-  private checkForError(response: Response): Response | Observable<any> {
-    if (response.status >= 200 && response.status < 300) {
-      return response;
-    } else {
-      var error = new Error(response.statusText)
-      error['response'] = response;
-      console.error(error);
-      throw error;
-    }
-  }
-
   get(path: string): Observable<any> {
     return this.http.get(`${this.api_url}${path}`, { headers: this.headers })
       .map(this.checkForError)
       .catch(err => Observable.throw(err))
-      .map(this.getJson)
+      .map(this.getJson);
   }
 
   post(path: string, body: any): Observable<any> {
@@ -44,7 +29,7 @@ export class ApiService {
     )
       .map(this.checkForError)
       .catch(err => Observable.throw(err))
-      .map(this.getJson)
+      .map(this.getJson);
   }
 
   delete(path: string): Observable<any> {
@@ -54,10 +39,25 @@ export class ApiService {
     )
       .map(this.checkForError)
       .catch(err => Observable.throw(err))
-      .map(this.getJson)
+      .map(this.getJson);
   }
 
   setHeaders(headers: Object) {
     Object.keys(headers).forEach(header => this.headers.set(header, headers[header]));
+  }
+
+  private getJson(response: Response) {
+    return response.json();
+  }
+
+  private checkForError(response: Response): Response | Observable<any> {
+    if (response.status >= 200 && response.status < 300) {
+      return response;
+    } else {
+      var error = new Error(response.statusText);
+      error['response'] = response;
+      console.error(error);
+      throw error;
+    }
   }
 }

@@ -22,10 +22,10 @@ export class StoreHelperService {
       if (item.id !== state.id) {
         return item;
       }
-      return Object.assign({}, item, state)
-    })}))
+      return Object.assign({}, item, state);
+    })}));
   }
-  
+
   findAndDelete(prop: any, id: string | number) {
     const currentState = this.store.getState();
     const collection = currentState[prop];

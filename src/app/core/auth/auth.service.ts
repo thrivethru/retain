@@ -12,14 +12,14 @@ export class AuthService implements CanActivate {
     private apiService: ApiService,
     private storeHelperService: StoreHelperService,
     private storeService: StoreService
-  ) { 
+  ) {
     this.setJwt(window.localStorage.getItem(this.JWT_KEY));
   }
 
   setJwt(jwt: string) {
     if (jwt !== null) {
       window.localStorage.setItem(this.JWT_KEY, jwt);
-      this.apiService.setHeaders({Authorization: `Bearer ${jwt}`})
+      this.apiService.setHeaders({Authorization: `Bearer ${jwt}`});
     }
   }
 
