@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 
-import { MaterialModule } from '@angular/material';
+import { SharedModule } from '../shared';
 
 import { AboutComponent }   from './about.component';
 import { AboutRoutingModule } from './about-routing.module';
 
 @NgModule({
-  imports: [ AboutRoutingModule, MaterialModule ],
+  imports: [ AboutRoutingModule, SharedModule ],
   exports: [],
   declarations: [AboutComponent],
   providers: [],
 })
 export class AboutModule { }
-
