@@ -7,7 +7,9 @@
     "start": "webpack-dev-server --inline --progress --port 8080",
     "test": "karma start",
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
-    "api": "angularclass-server --api retain --port 3500 --auth"
+    "api": "angularclass-server --api retain --port 3500 --auth",
+    "lint": "npm run tslint \"src/**/*.ts\"",
+    "tslint": "tslint"
   },
   "author": "Mark Warner",
   "license": "ISC",
@@ -51,6 +53,7 @@
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.2",
     "style-loader": "^0.13.1",
+    "tslint": "^3.15.1",
     "typescript": "^2.0.2",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1",
