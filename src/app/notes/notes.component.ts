@@ -5,7 +5,7 @@ import { StoreService } from '../core';
 import 'rxjs';
 
 @Component({
-  selector: 'notes',
+  selector: 'rt-notes',
   templateUrl: 'notes.component.html',
   styleUrls: ['notes.component.css']
 })

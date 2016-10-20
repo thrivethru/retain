@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'layout-component',
+  selector: 'rt-layout',
   template: `
     <div class="main-container">
-      <app-bar></app-bar>
+      <rt-app-bar></rt-app-bar>
       <main class="main">
           <router-outlet></router-outlet>
       </main>

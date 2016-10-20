@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../';
 
 @Component({
-  selector: 'app-bar',
+  selector: 'rt-app-bar',
   templateUrl: 'app-bar.component.html',
   styleUrls: ['app-bar.component.css']
 })

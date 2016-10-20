@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from './auth.service';
 
 @Component({
-  selector: 'auth',
+  selector: 'rt-auth',
   templateUrl: 'auth.component.html',
   styleUrls: ['auth.component.css']
 })

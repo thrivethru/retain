@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'color-picker',
+  selector: 'rt-color-picker',
   templateUrl: 'color-picker.component.html',
   styleUrls: ['color-picker.component.css']
 })

@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Note } from '../shared';
 
 @Component({
-  selector: 'note-card',
+  selector: 'rt-note-card',
   templateUrl: 'note-card.component.html',
   styleUrls: ['note-card.component.css']
 })

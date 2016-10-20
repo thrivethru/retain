@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app',
+  selector: 'rt-app',
   encapsulation: ViewEncapsulation.None,
   templateUrl: `
     <router-outlet></router-outlet>
