@@ -23,13 +23,12 @@ module.exports = function (config) {
     webpackServer: {
       noInfo: true
     },
-
-    reporters: ['progress'],
+    reporters: ['mocha'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: false,
-    browsers: ['PhantomJS'],
+    browsers: ['PhantomJS', 'Chrome'],
     singleRun: true
   };
 
