@@ -42,11 +42,11 @@ export class ApiService {
       .map(this.getJson);
   }
 
-  setHeaders(headers: Object) {
+  setHeaders(headers: Object): void {
     Object.keys(headers).forEach(header => this.headers.set(header, headers[header]));
   }
 
-  private getJson(response: Response) {
+  private getJson(response: Response): any {
     return response.json();
   }
 

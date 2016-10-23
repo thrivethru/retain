@@ -29,7 +29,7 @@ export class StoreService {
   private _store = _store;
   changes = this._store.asObservable().distinctUntilChanged();
 
-  setState(state: State) {
+  setState(state: State): void {
     this._store.next(state);
   }
 
@@ -37,7 +37,7 @@ export class StoreService {
     return this._store.value;
   }
 
-  purge() {
+  purge(): void {
     this._store.next(defaultState);
   }
 }

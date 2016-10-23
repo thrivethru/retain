@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 
 import { ApiService, StoreHelperService, StoreService } from '../';
 
@@ -16,21 +17,21 @@ export class AuthService implements CanActivate {
     this.setJwt(window.localStorage.getItem(this.JWT_KEY));
   }
 
-  setJwt(jwt: string) {
+  setJwt(jwt: string): void {
     if (jwt !== null) {
       window.localStorage.setItem(this.JWT_KEY, jwt);
       this.apiService.setHeaders({Authorization: `Bearer ${jwt}`});
     }
   }
 
-  authenticate(path: string, creds: Object) {
+  authenticate(path: string, creds: Object): Observable<any> {
     return this.apiService.post(`/${path}`, creds)
       .do(res => this.setJwt(res.token))
       .do(res => this.storeHelperService.update('user', res.data))
       .map(res => res.data);
   }
 
-  signout() {
+  signout(): void {
     window.localStorage.removeItem(this.JWT_KEY);
     this.storeService.purge();
     this.router.navigate(['', 'auth']);

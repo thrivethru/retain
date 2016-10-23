@@ -8,15 +8,15 @@ import { Note } from '../shared';
   styleUrls: ['note-card.component.css']
 })
 export class NoteCardComponent {
-  @Input() note = Note;
-  @Output() checked = new EventEmitter();
+  @Input() note: Object = Note;
+  @Output() checked: EventEmitter<any> = new EventEmitter();
   showCheck: boolean = false;
 
-  toggle() {
+  toggle(): void {
     this.showCheck = !this.showCheck;
   }
 
-  onChecked() {
+  onChecked(): void {
     this.checked.next(this.note);
   }
 }

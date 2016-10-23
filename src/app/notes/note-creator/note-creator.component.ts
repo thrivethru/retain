@@ -6,7 +6,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['note-creator.component.css']
 })
 export class NoteCreatorComponent {
-  @Output() createNote = new EventEmitter();
+  @Output() createNote: EventEmitter<any> = new EventEmitter();
   colors: Array<string> = ['#B19CD9', '#FF6961', '#77DD77', '#AEC6CF', '#F49AC2', 'white'];
   newNote = {
     title: '',
@@ -15,7 +15,7 @@ export class NoteCreatorComponent {
   };
   fullForm: boolean = false;
 
-  onCreateNote() {
+  onCreateNote(): void {
     const { title, value, color } = this.newNote;
 
     if (title && value) {
@@ -25,7 +25,7 @@ export class NoteCreatorComponent {
     this.reset();
   }
 
-  reset() {{
+  reset(): void {{
     this.newNote = {
       title: '',
       value: '',
@@ -33,11 +33,11 @@ export class NoteCreatorComponent {
     };
   }}
 
-  toggle(value: boolean) {
+  toggle(value: boolean): void {
     this.fullForm = value;
   }
 
-  onColorSelect(color: string) {
+  onColorSelect(color: string): void {
     this.newNote.color = color;
   }
 }

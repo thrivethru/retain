@@ -19,12 +19,12 @@ export class NotesComponent {
       .subscribe(res => this.notes = res.data);
   }
 
-  onCreateNote(note: {}) {
+  onCreateNote(note: {}): void {
     this.noteService.createNote(note)
       .subscribe();
   }
 
-  onNoteChecked(note: { id: number }) {
+  onNoteChecked(note: { id: number }): void {
     this.noteService.completeNote(note)
       .subscribe();
   }

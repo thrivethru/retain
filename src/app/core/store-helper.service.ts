@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
-import { StoreService } from './store.service';
+import { StoreService, State } from './store.service';
 @Injectable()
 export class StoreHelperService {
   constructor(private store: StoreService) {}
 
-  update(prop: any, state: Object) {
+  update(prop: any, state: State): void {
     const currentState = this.store.getState();
     this.store.setState(Object.assign({}, currentState, { [prop]: state }));
   }
 
-  add(prop: any, state: Object) {
+  add(prop: any, state: State): void {
     const currentState = this.store.getState();
     const collection = currentState[prop];
     this.store.setState(Object.assign({}, currentState, { [prop]: [state, ...collection] }));
   }
 
-  findAndUpdate(prop: any, state: {id?: string | number}) {
+  findAndUpdate(prop: any, state: {id?: string | number}): any {
     const currentState = this.store.getState();
     const collection = currentState[prop];
     this.store.setState(Object.assign({}, currentState, {[prop]: collection.map((item: any) => {
@@ -26,7 +26,7 @@ export class StoreHelperService {
     })}));
   }
 
-  findAndDelete(prop: any, id: string | number) {
+  findAndDelete(prop: any, id: string | number): void {
     const currentState = this.store.getState();
     const collection = currentState[prop];
     this.store.setState(Object.assign({}, currentState, {[prop]: collection.filter((item: any) => item.id !== id)}));

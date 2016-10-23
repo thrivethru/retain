@@ -10,7 +10,7 @@ import { AuthService } from '../';
 export class AppBarComponent {
   constructor(private authService: AuthService) {}
 
-  signout() {
+  signout(): void {
     this.authService.signout();
   }
 }

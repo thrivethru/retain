@@ -24,7 +24,7 @@ export class AuthComponent {
     private authService: AuthService
   ) { }
 
-  changeMode() {
+  changeMode(): void {
     if (this.mode === 'signin') {
       this.mode = 'signup';
       this.linkText = 'Already have an account?';
@@ -34,7 +34,7 @@ export class AuthComponent {
     }
   }
 
-  authenticate() {
+  authenticate(): void {
     this.authService.authenticate(this.mode, this.user)
       .subscribe(() => this.router.navigate(['']));
   }
