@@ -8,7 +8,7 @@
     "test": "karma start",
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
     "api": "angularclass-server --api retain --port 3500 --auth",
-    "lint": "npm run tslint \"src/**/*.ts\"",
+    "lint": "tslint ./src/**/*.ts",
     "tslint": "tslint"
   },
   "author": "Mark Warner",
@@ -47,7 +47,6 @@
     "karma-chrome-launcher": "^2.0.0",
     "karma-jasmine": "^1.0.2",
     "karma-mocha-reporter": "^2.2.0",
-    "karma-phantomjs-launcher": "^1.0.2",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.8.0",
     "null-loader": "^0.1.1",
