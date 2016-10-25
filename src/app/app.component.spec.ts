@@ -1,11 +1,24 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+
 import { AppComponent } from './app.component';
-describe('App', () => {
+
+let comp: AppComponent;
+let fixture: ComponentFixture<AppComponent>;
+
+describe('AppComponent', () => {
   beforeEach(() => {
-    TestBed.configureTestingModule({ declarations: [AppComponent]});
+    TestBed.configureTestingModule({
+      declarations: [ AppComponent ],
+      imports: [ RouterTestingModule ]
+    });
+    fixture = TestBed.createComponent(AppComponent);
+    comp = fixture.componentInstance;
   });
-  it ('should work', () => {
-    let fixture = TestBed.createComponent(AppComponent);
-    expect(fixture.componentInstance instanceof AppComponent).toBe(true, 'should create AppComponent');
+
+  it ('should instantiate component', () => {
+    expect(comp instanceof AppComponent).toBe(true, 'should create AppComponent');
   });
+
+  // ToDo test router outlet
 });
